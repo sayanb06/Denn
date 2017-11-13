@@ -1,5 +1,5 @@
 body {
-  background-image: url("C:\\Users\\Parul\\Documents\\Website\\stardust.png");
+  background-image: url("bglogin.jpg");
   background-repeat: repeat;
   font-size: 100%;
 }
@@ -7,7 +7,7 @@ body {
 
 #Header {
   text-align: center;
-  background-color: white;
+  background-color: 0x00000000;
   opacity: 0.4;
   border-radius: 5px;
   font-size: 3em;
@@ -27,20 +27,25 @@ body {
   margin-left: 45%;
 }
 
+#logo {
+  margin-top: auto;
+}
+
 #login-logo {
   text-align: center;
   height: 100%;
   opacity: 1.4;
   display: block;
+  margin-top: -3%;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
 #login-option-top {
 
   width: 10%;
   height: 10%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 45%;
 
 }
