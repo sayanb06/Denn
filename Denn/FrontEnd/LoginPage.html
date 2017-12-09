@@ -1,33 +1,35 @@
-
+<html>
 <head>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="67037978831-8fi98q8434cq31n0j2gjmh2e28363rs7.apps.googleusercontent.com">
     <title>
         Welcome to Denn!
     </title>
     <script>
-          var googleUser = {};
-          var startApp = function () {
-              gapi.load('auth2', function () {
-                  // Retrieve the singleton for the GoogleAuth library and set up the client.
-                  auth2 = gapi.auth2.init({
-                      client_id: '67037978831-8fi98q8434cq31n0j2gjmh2e28363rs7.apps.googleusercontent.com',
-                      cookiepolicy: 'single_host_origin',
-                      // Request scopes in addition to 'profile' and 'email'
-                      //scope: 'additional_scope'
-                  });
-                  attachSignin(document.getElementById('customBtn'));
-              });
-          };
+        var googleUser = {};
+        var startApp = function () {
+            gapi.load('auth2', function () {
+                // Retrieve the singleton for the GoogleAuth library and set up the client.
+                auth2 = gapi.auth2.init({
+                    client_id: '67037978831-8fi98q8434cq31n0j2gjmh2e28363rs7.apps.googleusercontent.com',
+                    cookiepolicy: 'single_host_origin',
+                    // Request scopes in addition to 'profile' and 'email'
+                    //scope: 'additional_scope'
+                });
+                attachSignin(document.getElementById('customBtn'));
+            });
+        };
 
-          function attachSignin(element) {
-              console.log(element.id);
-              auth2.attachClickHandler(element, {},
-                  function (googleUser) {
-                      document.getElementById('name').innerText = "Signed in: " +
-                          googleUser.getBasicProfile().getName();
-                  }, function (error) {
-                      alert(JSON.stringify(error, undefined, 2));
-                  });
-          }
+        function attachSignin(element) {
+            console.log(element.id);
+            auth2.attachClickHandler(element, {},
+                function (googleUser) {
+                    document.getElementById('name').innerText = "Signed in: " +
+                        googleUser.getBasicProfile().getName();
+                }, function (error) {
+                    alert(JSON.stringify(error, undefined, 2));
+                });
+        }
     </script>
     <style type="text/css">
         #customBtn {
@@ -71,35 +73,33 @@
     </style>
 </head>
 <body background="bglogin.jpg">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="67037978831-8fi98q8434cq31n0j2gjmh2e28363rs7.apps.googleusercontent.com">
-  <link rel="stylesheet" type="text/css" href="Style Sheet.css">
+    <link rel="stylesheet" type="text/css" href="Style Sheet.css">
 
-<div id="Header">
+    <div id="Header">
 
-</div>
-<div id="logo">
-  <center><img src="logo.png" width="600" height="256"></center>
-</div>
-
-<div id="login-option-top">
-    <div class="g-signin2" data-onsuccess="onSignIn">
-        <h1>SIGN IN</h1>
+    </div>
+    <div id="logo">
+        <center><img src="logo.png" width="600" height="256"></center>
     </div>
 
-    <div id="gSignInWrapper">
-        <span class="label">Sign in with:</span>
-        <div id="customBtn" class="customGPlusSignIn">
-            <span class="icon"></span>
-            <span class="buttonText">Google</span>
+    <div id="login-option-top">
+        <div class="g-signin2" data-onsuccess="onSignIn">
+            <h1>SIGN IN</h1>
         </div>
+
+        <div id="gSignInWrapper">
+            <span class="label">Sign in with:</span>
+            <div id="customBtn" class="customGPlusSignIn">
+                <span class="icon"></span>
+                <span class="buttonText">Google</span>
+            </div>
+        </div>
+        <div id="name"></div>
+        <script>startApp();</script>
     </div>
-    <div id="name"></div>
-    <script>startApp();</script>
-</div>
-<div id="login-option">
-  <img id="login-logo" src="facebook.svg" alt="Facebook logo">
-</div>
+    <div id="login-option">
+        <img id="login-logo" src="facebook.svg" alt="Facebook logo">
+    </div>
 
 
 </body>
@@ -127,3 +127,4 @@
     </div>
 </div>
 </div>-->
+</html>
