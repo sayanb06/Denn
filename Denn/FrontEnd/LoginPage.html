@@ -37,11 +37,12 @@
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
                 console.log('User signed out.');
+                document.getElementById("hi").innerHTML = "";
             });
         }
 
     </script>
-    <h3 id="hi" style="color:springgreen"></h3>
+    <h3 id="hi" style="text-align:center; color:springgreen" ></h3>
     <div id="login-option">
         <img id="login-logo" src="facebook.svg" alt="Facebook logo">
     </div>
