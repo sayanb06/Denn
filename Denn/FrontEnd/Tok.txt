@@ -1,2 +1,2 @@
-http://67037978831-8fi98q8434cq31n0j2gjmh2e28363rs7.apps.googleusercontent.com
+67037978831-8fi98q8434cq31n0j2gjmh2e28363rs7.apps.googleusercontent.com
 https://tokbox.com/embed/embed/ot-embed.js?embedId=de42f0bd-1dc0-4ef0-925b-6128a2db7bfd&room=DEFAULT_ROOM&iframe=true

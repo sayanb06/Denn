@@ -17,10 +17,10 @@ def homepage():
               $("#link").attr('value',document.URL);
             })
           TB.addEventListener("exception", exceptionHandler);
-          var session = TB.initSession("{{session_id}}"); // Replace with your own session ID. See https://dashboard.tokbox.com/projects
+          var session = TB.initSession("2_MX40NjAxODc0Mn5-MTUxMzA1NTMwODcyMX5PYTY3bitzd2g4VGQzUjhoQTYwb2U5Unh-fg");
           session.addEventListener("sessionConnected", sessionConnectedHandler);
           session.addEventListener("streamCreated", streamCreatedHandler);
-          session.connect({{api_key}}, "{{token}}"); // Replace with your API key and token. See https://dashboard.tokbox.com/projects
+          session.connect(46018742, "T1==cGFydG5lcl9pZD00NjAxODc0MiZzZGtfdmVyc2lvbj1kZWJ1Z2dlciZzaWc9MjQ5YTNmM2RmZGM3MjI5YmYyMGE0MjBiM2QzNWNkZTlhZmVkNGRhZTpzZXNzaW9uX2lkPTJfTVg0ME5qQXhPRGMwTW41LU1UVXhNekExTlRNd09EY3lNWDVQWVRZM2JpdHpkMmc0VkdRelVqaG9RVFl3YjJVNVVuaC1mZyZjcmVhdGVfdGltZT0xNTEzMDU1MzA4JnJvbGU9bW9kZXJhdG9yJm5vbmNlPTE1MTMwNTUzMDguNzMwNTY3MTI2MTUzJmV4cGlyZV90aW1lPTE1MTU2NDczMDg=");
           function sessionConnectedHandler(event) {
              subscribeToStreams(event.streams);
              session.publish();
@@ -57,12 +57,19 @@ def homepage():
                 console.log('Name: ' + profile.getName());
                 console.log('Image URL: ' + profile.getImageUrl());
                 console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-                document.getElementById("hi").innerHTML = "Hello " + profile.getName();
+                document.getElementById("Greeting").innerHTML = "Hello " + profile.getName();
+		        document.getElementById("GoogleSignIn").style.visibility = 'hidden'
+		        document.getElementById("GoogleSignOut").style.visibility = 'visible'
             }
         </script>
     </head>
     <body background="https://github.com/arch1904/Denn/blob/master/Denn/FrontEnd/Logout_files/bglogin.jpg?raw=true">
-        <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/arch1904/Denn/master/Denn/FrontEnd/Logout_files/Style%20Sheet.css">
+    <div id="login-option-top">
+            <div class="g-signin2" data-onsuccess="onSignIn" id="GoogleSignIn" style="float: right;"></div>        
+    </div>
+    <p></p>
+    <a href="#" onclick="signOut();" style="float: right;visibility: hidden; color: green;" id = "GoogleSignOut">Sign out</a>    
+    <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/arch1904/Denn/master/Denn/FrontEnd/Logout_files/Style%20Sheet.css">
 
         <div id="Header">
 
@@ -71,31 +78,41 @@ def homepage():
             <center><img src="https://github.com/arch1904/Denn/blob/master/Denn/FrontEnd/logo.png?raw=true" width="600" height="256"></center>
         </div>
 
-        <div id="login-option-top">
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>        
-        </div>
+        
     
 
-        <a href="#" onclick="signOut();">Sign out</a>
+        
         <script>
             function signOut() {
                 var auth2 = gapi.auth2.getAuthInstance();
                 auth2.signOut().then(function () {
-                    document.getElementById("hi").innerHTML = "";
+                    document.getElementById("Greeting").innerHTML = "";
                     console.log('User signed out.');
+		            document.getElementById("GoogleSignIn").style.visibility = 'visible'
+                    document.getElementById("GoogleSignOut").style.visibility = 'hidden'
                 });
             }
 
         </script>
-        <h3 id="hi" style="text-align:center; color:springgreen" ></h3>
-        <div id="login-option">
-            <img id="login-logo" src="facebook.svg" alt="Facebook logo">
-        </div>
+        <h3 id="Greeting" style="text-align:center; color:springgreen" ></h3>
         <script>onSignIn();</script>
 	    <h1 style= "text-align: center; color:red">Denn ChatRoom</h1>
-          Share this chatroom!
-          <input style= "width: 150px;"  id= "link" type= "text" readonly= "readonly" value= "" />
-        <iframe id = "Tok" src=""" + f.readline() + """ width="600px" height="600px" ></iframe>
+        <iframe id = "Tok" src=""" + f.readline() + """ width="840px" height="640px" ></iframe>
+        <input type="text" id="myTextBox" cols="50" rows="1" placeholder="Enter YouTube Link">
+        <script>
+            function sendVideo() {
+                    var url = document.getElementById("myTextBox").value
+                    url = url.replace("watch?v=", "embed/");
+		            document.getElementById("Video").innerHTML = "<iframe src=\\\""+url+"\\\?autoplay=1\\\" width=\\\"840\\\" id = \\\"YTPlayer\\\" height=\\\"473\\\" frameborder=\\\"0\\\" gesture=\\\"media\\\" allow=\\\"encrypted-media\\\" allowfullscreen></iframe>";
+
+                }
+        </script>
+	    <button onclick=sendVideo() style="color: blue;" >Watch YouTube Video</button>
+        
+        <p></p>	
+    <div id="Video">
+    </div>
+    
     </body>
     </html>
     """
