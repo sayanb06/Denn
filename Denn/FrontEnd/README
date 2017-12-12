@@ -1,0 +1,23 @@
+Denn
+1. The What:
+	A group of 4 individuals create an app which have set out to create an web app that will connect groups to watch movies online together
+	a. Progress:
+		1. Seamless Video Integration
+		2. Google Authentication (there but not integrated in)
+		3. Video Streaming (in progress)
+
+2. The Who:
+	Parul Chakole, Tushar Jain, Joseph Sieger, Sayan Bhattacharjee
+
+3. The How:
+	1. Install Flask
+	2. run simply.py in Denn\FrontEnd
+	3. go to localhost:5000 in web browser
+	4. Enjoy conversing with friends
+
+4. The Why:
+	We're a group of 4 social individuals that wanted to create an app which would connect individuals from any 4 corners
+	of the globe as though they were in a theater all together.
+
+5. The Where:
+	The University of Illinois at Urbana-Champaign obviously!
