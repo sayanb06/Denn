@@ -63,7 +63,7 @@ def homepage():
             }
         </script>
     </head>
-    <body background="https://github.com/arch1904/Denn/blob/master/Denn/FrontEnd/Logout_files/bglogin.jpg?raw=true">
+    <body background="https://github.com/arch1904/Denn/blob/master/Denn/FrontEnd/Logout_files/bglogin.jpg?raw=true" id = "back">
     <div id="login-option-top">
             <div class="g-signin2" data-onsuccess="onSignIn" id="GoogleSignIn" style="float: right;"></div>        
     </div>
@@ -97,21 +97,31 @@ def homepage():
         <h3 id="Greeting" style="text-align:center; color:springgreen" ></h3>
         <script>onSignIn();</script>
 	    <h1 style= "text-align: center; color:red">Denn ChatRoom</h1>
-        <iframe id = "Tok" src=""" + f.readline() + """ width="840px" height="640px" ></iframe>
+        <iframe id = "Tok" src=""" + f.readline() + """ width="840px" height="640px" style = "display:inline-block"></iframe>
+        <fakee id="Video" style = "display:inline-block"></fakee>
         <input type="text" id="myTextBox" cols="50" rows="1" placeholder="Enter YouTube Link">
         <script>
             function sendVideo() {
                     var url = document.getElementById("myTextBox").value
                     url = url.replace("watch?v=", "embed/");
 		            document.getElementById("Video").innerHTML = "<iframe src=\\\""+url+"\\\?autoplay=1\\\" width=\\\"840\\\" id = \\\"YTPlayer\\\" height=\\\"473\\\" frameborder=\\\"0\\\" gesture=\\\"media\\\" allow=\\\"encrypted-media\\\" allowfullscreen></iframe>";
+                    var button = document.getElementById("button1");
+                    var pplace = document.getElementById("placehold");
+                    var back = document.getElementById("back");
+                    var texting = document.getElementById("myTextBox");
+                    back.removeChild(button);
+                    back.removeChild(pplace);
+                    back.removeChild(texting);
 
                 }
+            function getHalfWidth() {
+                return window.innerWidth/2;
+                }
         </script>
-	    <button onclick=sendVideo() style="color: blue;" >Watch YouTube Video</button>
+	    <button onclick=sendVideo() style="color: blue;" id="button1">Watch YouTube Video</button>
         
-        <p></p>	
-    <div id="Video">
-    </div>
+        <p id = "placehold"></p>	
+    
     
     </body>
     </html>
