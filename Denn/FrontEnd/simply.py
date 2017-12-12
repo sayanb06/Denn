@@ -8,6 +8,7 @@ def homepage():
     <!DOCTYPE html>
     <html>
     <head>
+    #TokBox API
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <script src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
 	    <script>
@@ -45,6 +46,7 @@ def homepage():
           }
       
         </script>
+	#Google OAuth2 API
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <meta name="google-signin-client_id" content="""+f.readline()+""">
         <title>
