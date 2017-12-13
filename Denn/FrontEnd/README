@@ -13,7 +13,8 @@ Denn
 	1. Install Flask
 	2. run simply.py in Denn\FrontEnd
 	3. go to localhost:5000 in web browser
-	4. Enjoy conversing with friends (requires friends or 2 windows opening the app (after friend joins, you may need to reload))
+	4. Repeat on other computers or ask for ngrok API whutelisting 
+	5. Enjoy conversing with friends (requires friends or 2 windows opening the app (after friend joins, you may need to reload))
 
 4. The Why:
 	We're a group of 4 social individuals that wanted to create an app which would connect individuals from any 4 corners
