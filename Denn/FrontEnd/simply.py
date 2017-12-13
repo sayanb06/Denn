@@ -99,14 +99,18 @@ def homepage():
         <h3 id="Greeting" style="text-align:center; color:springgreen" ></h3>
         <script>onSignIn();</script>
 	    <h1 style= "text-align: center; color:red">Denn ChatRoom</h1>
-        <iframe id = "Tok" src=""" + f.readline() + """ width="840px" height="640px" style = "display:inline-block"></iframe>
+<iframe id = "Tok" src=""" + f.readline() + """ width=45% height=640></iframe>
+   <fakee id="Video" ></fakee>
+
+
+        
         <fakee id="Video" style = "display:inline-block"></fakee>
         <input type="text" id="myTextBox" cols="50" rows="1" placeholder="Enter YouTube Link">
         <script>
             function sendVideo() {
                     var url = document.getElementById("myTextBox").value
                     url = url.replace("watch?v=", "embed/");
-		            document.getElementById("Video").innerHTML = "<iframe src=\\\""+url+"\\\?autoplay=1\\\" width=\\\"840\\\" id = \\\"YTPlayer\\\" height=\\\"473\\\" frameborder=\\\"0\\\" gesture=\\\"media\\\" allow=\\\"encrypted-media\\\" allowfullscreen></iframe>";
+		            document.getElementById("Video").innerHTML = "<iframe src=\\\""+url+"\\\?autoplay=1\\\" width=\\\"45%\\\" id = \\\"YTPlayer\\\" height=\\\"473\\\" frameborder=\\\"0\\\" gesture=\\\"media\\\" allow=\\\"encrypted-media\\\" allowfullscreen></iframe>";
                     var button = document.getElementById("button1");
                     var pplace = document.getElementById("placehold");
                     var back = document.getElementById("back");
