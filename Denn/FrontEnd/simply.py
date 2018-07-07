@@ -98,7 +98,7 @@ def homepage():
         </script>
         <h3 id="Greeting" style="text-align:center; color:springgreen" ></h3>
         <script>onSignIn();</script>
-	    <h1 style= "text-align: center; color:red">Denn ChatRoom</h1>
+
 <iframe id = "Tok" src=""" + f.readline() + """ width=45% height=640></iframe>
    <fakee id="Video" ></fakee>
 
